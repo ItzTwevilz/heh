@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 50px;
+        }
+
+        th, td {
+            border: 1px solid #a9e2cc;
+        }
+
+        fieldset {
+            margin-top: 5px;
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 400px;
+            font-family: sans-serif;
+        }
+
+        .tabs__label {
+            padding: 10px 16px;
+            cursor: pointer;
+        }
+
+        .tabs__radio {
+            display: none;
+        }
+
+        .tabs__content {
+            order: 1;
+            width: 100%;
+            border-bottom: 3px solid #dddddd;
+            line-height: 1.5;
+            font-size: 0.9em;
+            display: none;
+        }
+
+        .tabs__radio:checked+.tabs__label {
+            font-weight: bold;
+            color: #009578;
+            border-bottom: 2px solid #009578;
+        }
+
+        .tabs__radio:checked+.tabs__label+.tabs__content {
+            display: initial;
+        }
+    </style>
+</head>
+<body>
+    <a href="main"><button action="">Назад</button></a>
+    <br>
+    <label>Фамилия<input type="text" required></label>
+    <label>Имя<input type="text" required></label>
+    <label>Отчество<input type="text" required></label>
+    <br>
+    <input type="radio" class="tabs__radio" name="tabs-example" id="tab1" checked>
+    <label for="tab1" class="tabs__label">Главная</label>
+    <div class="tabs__content">
+        <br>
+        <fieldset>
+            <legend>Документ, удостоверяющий личность</legend>
+            {{ choice.choice }}
+            <label>Серия<input type="text"></label>
+            <label>Номер<input type="text"></label>
+            <label>Кем выдан<input type="text"></label>
+        </fieldset>
+        <fieldset>
+            <legend>Адрес регистрации</legend>
+        </fieldset>
+    </div>
+    <input type="radio" class="tabs__radio" name="tabs-example" id="tab2">
+    <label for="tab2" class="tabs__label">Образование</label>
+    <div class="tabs__content">
+        <br>
+        <fieldset>
+            <legend>Документы об образовании</legend>
+            <label>Тип<input type="text"></label>
+        </fieldset>
+    </div>
+</body>
+</html>

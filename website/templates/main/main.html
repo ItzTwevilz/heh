@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 50px;
+        }
+
+        th, td {
+            border: 1px solid #a9e2cc;
+        }
+
+        .smh {
+            style:"border-right: 2px solid gray;"
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 400px;
+            font-family: sans-serif;
+        }
+
+        .tabs__label {
+            padding: 10px 16px;
+            cursor: pointer;
+        }
+
+        .tabs__radio {
+            display: none;
+        }
+
+        .tabs__content {
+            order: 1;
+            width: 100%;
+            border-bottom: 3px solid #dddddd;
+            line-height: 1.5;
+            font-size: 0.9em;
+            display: none;
+        }
+
+        .tabs__radio:checked+.tabs__label {
+            font-weight: bold;
+            color: #009578;
+            border-bottom: 2px solid #009578;
+        }
+
+        .tabs__radio:checked+.tabs__label+.tabs__content {
+            display: initial;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <input type="radio" class="tabs__radio" name="tabs-example" id="tab1" checked>
+        <label for="tab1" class="tabs__label">Главная</label>
+        <div class="tabs__content">
+            <table>
+                <tr>
+                    <th>Статистика по 9 классу</th>
+                </tr>
+                <tr>
+                    <th>Код специальности</th>
+                    <th>Специальность</th>
+                    <th>Мест бюджета</th>
+                    <th>Бюджет</th>
+                </tr>
+                <tr>
+                    <td>Тестовый код</td>
+                    <td>Тестовая специальность</td>
+                    <td>Тестовый бюджет</td>
+                    <td>69</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Гражданство</th>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>России</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Нуждаются в общежитии</th>
+                </tr>
+                <tr>
+                    <td>жен</td>
+                    <td>1</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Последние действия</th>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <input type="radio" class="tabs__radio" name="tabs-example" id="tab2">
+        <label for="tab2" class="tabs__label">Базовые операции</label>
+        <div class="tabs__content">
+            <div class="smh">
+                <a href="registration"><button action="">Регистрация и печать заявлений</button></a>
+                <button>Поиск</button>
+                <button>Печать журнала регистрации</button>
+                <button>Поиск призывников</button>
+                <button>Личная карточка (Т2)</button>
+            </div>
+        </div>
+        <input type="radio" class="tabs__radio" name="tabs-example" id="tab3">
+        <label for="tab3" class="tabs__label">Статистика</label>
+        <div class="tabs__content">
+            Ну тут слишком много для того что ещё не реализовано
+        </div>
+        <input type="radio" class="tabs__radio" name="tabs-example" id="tab4">
+        <label for="tab4" class="tabs__label">Системные</label>
+        <div class="tabs__content">
+            <button>Системный журнал</button>
+            <button>Проверка пола по фамилии</button>
+        </div>
+    </div>
+</body>
+</html>
