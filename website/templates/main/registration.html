@@ -1,87 +1,127 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        body {
-            margin: 50px;
-        }
-
-        th, td {
-            border: 1px solid #a9e2cc;
-        }
-
-        fieldset {
-            margin-top: 5px;
-        }
-
-        .tabs {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 400px;
-            font-family: sans-serif;
-        }
-
-        .tabs__label {
-            padding: 10px 16px;
-            cursor: pointer;
-        }
-
-        .tabs__radio {
-            display: none;
-        }
-
-        .tabs__content {
-            order: 1;
-            width: 100%;
-            border-bottom: 3px solid #dddddd;
-            line-height: 1.5;
-            font-size: 0.9em;
-            display: none;
-        }
-
-        .tabs__radio:checked+.tabs__label {
-            font-weight: bold;
-            color: #009578;
-            border-bottom: 2px solid #009578;
-        }
-
-        .tabs__radio:checked+.tabs__label+.tabs__content {
-            display: initial;
-        }
-    </style>
+    <title>Запись</title>
+    <link href="{% static 'style.css' %}" rel="stylesheet">
 </head>
 <body>
-    <a href="main"><button action="">Назад</button></a>
+    <a href="main"><button class="button-18" action="">Назад</button></a>
     <br>
-    <label>Фамилия<input type="text" required></label>
-    <label>Имя<input type="text" required></label>
-    <label>Отчество<input type="text" required></label>
-    <br>
-    <input type="radio" class="tabs__radio" name="tabs-example" id="tab1" checked>
-    <label for="tab1" class="tabs__label">Главная</label>
-    <div class="tabs__content">
+    <form action="POST">
+        <label>Фамилия<input type="text" required></label>
+        <label>Имя<input type="text" required></label>
+        <label>Отчество<input type="text" required></label>
         <br>
         <fieldset>
-            <legend>Документ, удостоверяющий личность</legend>
-            {{ choice.choice }}
-            <label>Серия<input type="text"></label>
-            <label>Номер<input type="text"></label>
-            <label>Кем выдан<input type="text"></label>
+            <legend>Документ</legend>
+            <fieldset>
+                <legend>Документ, удостоверяющий личность</legend>
+                <label>Тип документа {{ choice.choice }}</label>
+                <label>Серия<input type="text"></label>
+                <label>Номер<input type="text"></label>
+                <label>Кем выдан<input type="text"></label>
+                <label>Код подразделения<input type="text"></label>
+                <label>Дата выдачи<input type="date"></label>
+                <label>Место рождения<input type="text"></label>
+                <label>СНИЛС<input type="text"></label>
+            </fieldset>
+            <fieldset>
+                <legend>Адрес регистрации</legend>
+                <label>Телефон<input type="text"></label>
+                <label>Индекс<input type="text"></label>
+                <label>Республика/край/область<input type="text"></label>
+                <label>Район<input type="text"></label>
+                <label>Населенный пункт<input type="text"></label>
+                <label>Улица, дом, кв<input type="text"></label>
+                <label>Фактическое место жительства<input type="text"></label>
+            </fieldset>
         </fieldset>
         <fieldset>
-            <legend>Адрес регистрации</legend>
+            <legend>Образование</legend>
+            <fieldset>
+                <legend>Документы об образовании</legend>
+                <label>Тип документа {{ eduChoice.eduChoice }}</label>
+                <label>Серия<input type="text"></label>
+                <label>Номер<input type="text"></label>
+                <label>Когда выдан<input type="text"></label>
+                <label>Кем выдан<input type="text"></label>
+                <label>Год окончания<input type="date"></label>
+                <label>Средний бал<input type="text"></label>
+            </fieldset>
         </fieldset>
-    </div>
-    <input type="radio" class="tabs__radio" name="tabs-example" id="tab2">
-    <label for="tab2" class="tabs__label">Образование</label>
-    <div class="tabs__content">
-        <br>
         <fieldset>
-            <legend>Документы об образовании</legend>
-            <label>Тип<input type="text"></label>
+            <legend>Специальности</legend>
+            <fieldset>
+                <fieldset>
+                    <legend>Программа подготовки</legend>
+                    <label>СПО<input type="radio"></label>
+                    <label>Профессия<input type="radio"></label>
+                    <label>НПО<input type="radio"></label>
+                </fieldset>
+                <fieldset>
+                    <legend>Форма обучения</legend>
+                    <label>Очная<input type="radio"></label>
+                    <label>Заочная<input type="radio"></label>
+                </fieldset>
+                <fieldset>
+                    <legend>Финансирование</legend>
+                    <label>Бюджет<input type="radio"></label>
+                    <label>Внебюджет<input type="radio"></label>
+                </fieldset>
+                <fieldset>
+                    <legend>Курс</legend>
+                    <label>На 1-й курс<input type="radio"></label>
+                    <label>На 2-й и последующие<input type="radio"></label>
+                </fieldset>
+                    <table>
+                    <tr>
+                        <th>Код специальности</th>
+                        <th>Специальность</th>
+                    </tr>
+                    <tr>
+                        <td>Тестовый код</td>
+                        <td>Тестовая специальность</td>
+                    </tr>
+                </table>
+            </fieldset>
         </fieldset>
-    </div>
+        <fieldset>
+            <legend>Дополнительно</legend>
+            <label>Нуждаюсь в общежитии<input type="radio"></label>
+            <label>Иностранный язык<input type="text"></label>
+            <label>Индивидуальные достижения<input type="radio"></label>
+            <label>Целевое обучение<input type="radio"></label>
+            <fieldset>
+                <legend>Родители</legend>
+                <label>Родитель опекун женского пола {{ fparent.fparent }}</label>
+                <label>Фамилия<input type="text"></label>
+                <label>Имя<input type="text"></label>
+                <label>Отчество<input type="text"></label>
+                <label>Телефон<input type="text"></label>
+                <label>Дата рождения<input type="date"></label>
+                <label>Место работы<input type="text"></label>
+                <br>
+                <br>
+                <label>Родитель опекун мужского пола {{ mparent.mparent }}</label>
+                <label>Фамилия<input type="text"></label>
+                <label>Имя<input type="text"></label>
+                <label>Отчество<input type="text"></label>
+                <label>Телефон<input type="text"></label>
+                <label>Дата рождения<input type="date"></label>
+                <label>Место работы<input type="text"></label>
+            </fieldset>
+        </fieldset>
+        <fieldset>
+            <legend>Дополнительные документы</legend>
+            <label>Медицинская справка<input type="radio"></label>
+            <label>4 фото 3x4<input type="radio"></label>
+            <label>Копия СНИЛС<input type="radio"></label>
+            <label>Согласие на обработку ПДн<input type="radio"></label>
+            {{ socialStatus.socialStatus }}
+        </fieldset>
+        <input type="submit">
+    </form>
 </body>
 </html>
