@@ -1,17 +1,13 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>АИС Приёмная Компания</title>
-    <link href="{% static 'style.css' %}" rel="stylesheet">
-</head>
-<body>
-    <div class="user">
-        Имя пользователя: {{ user.get_username }}
-        <br>
-        <a href="{% url 'logout' %}"><button class="button-18">Выйти</button></a>
-    </div>
+{% extends 'main/base.html' %}
+{% block content %}
+    <style>
+        table{
+            border: 2px solid rgb(140 140 140);
+        }
+        th, td{
+            border: 1px solid rgb(160 160 160);
+        }
+    </style>
     <div class="tabs">
         <input type="radio" class="tabs__radio" name="tabs-example" id="tab1" checked>
         <label for="tab1" class="tabs__label">Главная</label>
@@ -24,22 +20,27 @@
                     <th>Код специальности</th>
                     <th>Специальность</th>
                     <th>Мест бюджета</th>
-                    <th>Бюджет</th>
                 </tr>
+                {% for obj in spec %}
                 <tr>
-                    <td>Тестовый код</td>
-                    <td>Тестовая специальность</td>
-                    <td>69</td>
-                    <td>Тестовый бюджет</td>
+                    <td>{{ obj.code }}</td>
+                    <td>{{ obj.spec_name }}</td>
+                    <td align="center">{{ obj.places }}</td>
                 </tr>
+                {% endfor %}
             </table>
             <table>
                 <tr>
                     <th>Гражданство</th>
+                    <th>Кол-во</th>
                 </tr>
                 <tr>
-                    <td>0</td>
                     <td>России</td>
+                    <td align="center">{{ citizen }}</td>
+                </tr>
+                <tr>
+                    <td>Иностранное</td>
+                    <td align="center">{{ citizeni }}</td>
                 </tr>
             </table>
             <table>
@@ -47,16 +48,7 @@
                     <th>Нуждаются в общежитии</th>
                 </tr>
                 <tr>
-                    <td>жен</td>
-                    <td>0</td>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                    <th>Последние действия</th>
-                </tr>
-                <tr>
-                    <td></td>
+                    <td align="center">{{ dorm }}</td>
                 </tr>
             </table>
         </div>
@@ -64,26 +56,11 @@
         <label for="tab2" class="tabs__label">Базовые операции</label>
         <div class="tabs__content">
             <div class="smh">
-                <a href="registration"><button action="">Регистрация и печать заявлений</button></a>
-                <button>Поиск</button>
-                <button>Печать журнала регистрации</button>
-                <button>Поиск призывников</button>
-                <button>Личная карточка (Т2)</button>
+                <a href="registration" class="button-18">Регистрация заявлений</a>
+                <br>
+                <a href="search" class="button-18">Поиск</a>
+                <br>
             </div>
         </div>
-        <input type="radio" class="tabs__radio" name="tabs-example" id="tab3">
-        <label for="tab3" class="tabs__label">Статистика</label>
-        <div class="tabs__content">
-            Ничего
-        </div>
-        {% if request.user.is_superuser %}
-            <input type="radio" class="tabs__radio" name="tabs-example" id="tab4">
-            <label for="tab4" class="tabs__label">Системные</label>
-            <div class="tabs__content">
-                <button>Системный журнал</button>
-                <button>Проверка пола по фамилии</button>
-            </div>
-        {% endif %}
     </div>
-</body>
-</html>
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Приёмная компания</title>
+</head>
+
+<body>
+<center>
+    <h2>Областное бюджетное профессиональное
+        <br>
+        образовательное учреждение
+        <br>
+        "Курский техникум связи"
+    </h2>
+</center>
+<center>
+    <h1>Личная карточка</h1>
+</center>
+
+<p text-align="justify">Студент <u>{{ abb.surname }} {{ abb.name }} {{ abb.pname }}</u></p>
+<p text-align="justify">Зачислен(на) {{ abb.course }} курс, в группу <u>{{ abb.spec.short_name }}</u> «___» __________ 20__ года</p>
+<p text-align="justify">По приказу № <u>258-осн</u> от __________<u>1 октября 2021 г.</u>_________</p>
+<p text-align="justify">По специальности <u>{{ abb.spec.code }} {{ abb.spec.spec_name }}</u></p>
+<center>
+    <h2>I. Общие сведения о студенте</h2>
+</center>
+<p text-align="justify">1. ________________________<u>{{ abb.surname }} {{ abb.name }} {{ abb.pname }}</u>_____________</p>
+<p text-align="justify">2. Год, месяц и число рождения <u>{{ abb.birthday }}</u></p>
+<p text-align="justify">3. Место рождения <u>{{ abb.birthplace }}</u></p>
+<p text-align="justify">4. Ф.И.О. и адрес родителя (полностью) {{ abb.parent_key.parent_surname }} {{ abb.parent_key.parent_name }}
+    {{ abb.parent_key.parent_pname }} {{ abb.fact_place }}</p>
+<p text-align="justify">5. Гражданство {{ abb.choice }}</p>
+<p text-align="justify">6. Образование до поступления в среднее специальное учебное заведение: Указать
+    наименование школы, образование, количество классов, номер и дату аттестата <u>{{ abb.edu_key.eduChoice }}
+    выдан {{ abb.edu_key.edu_out }} серия № {{ abb.edu_key.serial_edu }} {{ abb.edu_key.number_edu }} {{abb.edu_key.who_out }}</u></p>
+<p text-align="justify">7. Приказ номер и дата: о переводе на II курс ___________________________</p>
+<p text-align="justify">о переводе на III курс ___________________________</p>
+<p text-align="justify">о переводе на IV курс ___________________________</p>
+<p text-align="justify">8. Куда направлен работать и на какую должность ________________________________________</p>
+</body>
+</html>

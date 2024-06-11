@@ -4,18 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c1146b8-54a9-4529-996f-6a7e76525067" name="Changes" comment="Coll">
+    <list default="true" id="8c1146b8-54a9-4529-996f-6a7e76525067" name="Changes" comment="Colli">
+      <change afterPath="$PROJECT_DIR$/website/templates/main/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/templates/main/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/templates/main/show.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/templates/main/update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/website/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/main/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/main/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/main/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/main/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/main/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/main/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/website/templates/main/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/main/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/templates/main/my-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/main/my-login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/main/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/main/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/main/register.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/website/templates/main/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/main/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/main/tabs.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/website/website/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/website/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/website/static/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +69,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\PythonDiplom\Admission\website\static\css" />
+      <recent name="F:\PythonDiplom\Admission\website" />
+      <recent name="F:\PythonDiplom\Admission\website\website\static\css" />
       <recent name="F:\PythonDiplom\Admission\website\website\static" />
       <recent name="F:\PythonDiplom\Admission\website\website" />
-      <recent name="F:\PythonDiplom\Admission\website\main\static\css" />
-      <recent name="F:\PythonDiplom\Admission\website\main" />
-      <recent name="F:\PythonDiplom\Admission\website" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -91,7 +100,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715663924643</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Colli">
+      <option name="closed" value="true" />
+      <created>1716301434512</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716301434512</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Colli">
+      <option name="closed" value="true" />
+      <created>1716301510026</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716301510026</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,6 +132,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Coll" />
-    <option name="LAST_COMMIT_MESSAGE" value="Coll" />
+    <MESSAGE value="Colli" />
+    <option name="LAST_COMMIT_MESSAGE" value="Colli" />
   </component>
 </project>

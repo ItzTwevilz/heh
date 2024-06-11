@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<center>
+    <form>
+        <input name="q" placeholder="Поиск">
+        <button class="button-18">Поиск</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ФИО</th>
+                <th>Средний бал</th>
+                <th>Документ удостоверяющий личность</th>
+                <th>Документ об образовании</th>
+                <th>Финансирование</th>
+                <th>Форма обучения</th>
+                <th>Специальность</th>
+                <th>Копии</th>
+            </tr>
+        </thead>
+        {% for obj in abb_list %}
+            <tr>
+                <th>{{ obj.id }}</th>
+                <td><a href="{% url 'show' obj.id %}">{{ obj.surname }} {{ obj.name }} {{ obj.pname }}</a></td>
+                <td>{{ obj.average_grade }}</td>
+                <td>{{ obj.passport_key.choice }} {{ obj.passport_key.serial_ul }} {{ obj.passport_key.number_ul }}</td>
+                <td>{{ obj.edu_key.eduChoice }} {{ obj.edu_key.serial_edu }} {{ obj.edu_key.number_edu }}</td>
+                <td>{{ obj.finance }}</td>
+                <td>{{ obj.form }}</td>
+                <td>{{ obj.spec.short_name }}</td>
+                <td>{{ obj.copy }}</td>
+                <td align="center"><a href="{% url 'update' obj.id %}" class="styled">Обновить</a></td>
+                <td align="center"><a href="{% url 'delete' obj.id %}" class="styled2">Удалить</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</center>
+{% endblock %}

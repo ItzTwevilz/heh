@@ -1,8 +1,8 @@
 {% extends 'main/base.html' %}
 {% block content %}
-    <a href="main"><button class="button-18">Назад</button></a>
-    <br>
-    <form action="" method="POST">
+<h1>Редактировать</h1>
+<br/>
+<form action="" method="POST">
         {% csrf_token %}
         <label>Фамилия {{ form.surname }}</label>
         <label>Имя {{ form.name }}</label>
@@ -25,12 +25,12 @@
             <fieldset>
                 <legend>Адрес регистрации</legend>
                 <label>Телефон {{ form.telephone }}</label>
-                <label>Индекс {{ form_5.index }}</label>
-                <label>Республика/край/область {{ form_5.region }}</label>
-                <label>Район {{ form_5.district }}</label>
-                <label>Населенный пункт {{ form_5.town }}</label>
-                <label>Улица, дом, кв. {{ form_5.place }}</label>
-                <label>Фактическое место жительства {{ form_5.fact_place }}</label>
+                <label>Индекс {{ form.index }}</label>
+                <label>Республика/край/область {{ form.region }}</label>
+                <label>Район {{ form.district }}</label>
+                <label>Населенный пункт {{ form.town }}</label>
+                <label>Улица, дом, кв. {{ form.place }}</label>
+                <label>Фактическое место жительства {{ form.fact_place }}</label>
             </fieldset>
         </fieldset>
         <fieldset>
@@ -74,7 +74,7 @@
             <label>Требуется общежитие{{ form.dorm }}</label>
             <label>Иностранный язык {{ form.foreign_lan }}</label>
             <fieldset>
-                <legend>Родители</legend>
+                <legend>Родитель</legend>
                 <label>Родитель/Опекун {{ form_2.parent }}</label>
                 <br><br>
                 <label>Фамилия {{ form_2.parent_surname }}</label>
@@ -95,6 +95,7 @@
             {{ form.socialStatus }}
         </fieldset>
         <span>{{ error }}</span>
-        <button type="submit" class="button-18">Добавить</button>
+        <br>
+        <input type="submit" value="Сохранить" class="button-18">
     </form>
 {% endblock %}

@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Приёмная кампания</title>
+    <link rel="stylesheet", href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 class="h1class">
+                АИС Приёмная кампания
+            </h1>
+            <div class="user">
+                <p>Имя пользователя: {{ user.get_username }}</p>
+                <a href="{% url 'logout' %}" class="button-18">Выйти</a>
+            </div>
+        </div>
+    </header>
+        {% block content %}
+
+        {% endblock %}
+    <footer >
+        <div class="container">
+            <p>Контактные данные</p>
+            <ul>
+                <li>+79510888429</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
